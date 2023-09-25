@@ -28,7 +28,7 @@
 <?php
 define("HOST", "localhost");
 define("USER", "root");
-define("PASSWORD", "jurandir1965");
+define("PASSWORD", "");
 define("DATABASE_NAME", "borth");
 
 ini_set('display_errors', 1);
