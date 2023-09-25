@@ -2,16 +2,15 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
 
     <h1 class="text-center mt-4">Cadastro de clientes</h1>
 
-    <form action="" class="container">
+
+    <form method="post" class="container">
         <div class="row mt-3">
             <div class="col">
                 <label for="">Digite seu nome</label>
@@ -61,10 +60,29 @@
 
         <div class="row mt-3">
             <div class="col">
-                <button class="btn btn-primary">Enviar</button>
+                <button name="enviar" type="submit" class="btn btn-primary">Enviar</button>
             </div>
         </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="stat" id="flexRadioDefault1" value="true">
+            <label class="form-check-label" for="flexRadioDefault1">
+                cliente ativo
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="stat" id="flexRadioDefault2" value="false" checked>
+            <label class="form-check-label" for="flexRadioDefault2">
+                cliente não ativo
+            </label>
+        </div>
     </form>
+
+    <?php if (isset($_POST["enviar"])) {
+        include("../Trabalho_borth/cliente/config.php");
+    }
+    ?>
+
+
 </body>
 
 </html>

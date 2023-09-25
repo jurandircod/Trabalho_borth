@@ -22,13 +22,13 @@
                         <a class="nav-link active" aria-current="page" href="index.php">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Grupo de clientes</a>
+                        <a class="nav-link" href="?page=gpclienteslistar">Grupo de clientes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Grupo de usuarios</a>
+                        <a class="nav-link" href="?page=gpusuariolistar">Grupo de usuarios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Clientes</a>
+                        <a class="nav-link" href="?page=clienteslistar">Clientes</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -36,7 +36,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="?page=gpusuario">Cadastrar grupo de usuarios</a></li>
-                            <li><a class="dropdown-item" href="?page=gpusuario">Cadastrar grupo de clientes</a></li>
+                            <li><a class="dropdown-item" href="?page=gpcliente">Cadastrar grupo de clientes</a></li>
                             <li><a class="dropdown-item" href="?page=produto">Cadastrar produtos</a></li>
                             <li><a class="dropdown-item" href="?page=cliente">Cadastrar Clientes</a></li>
                         </ul>
@@ -46,24 +46,36 @@
         </div>
     </nav>
 
-    <?php
-    switch (@$_REQUEST["page"]) {
-        case "cliente";
-            include("../TrabalhoBorth/cliente/cadastrarCliente.php");
-            break;
-        case "gpcliente";
-            include("../TrabalhoBorth/grupocliente/cadastrarGpCliente.php");
-            break;
-        case "gpusuario";
-            include("../TrabalhoBorth/grupodeusuario/cadastrarGpUsuario.php");
-            break;
-        case "produto";
-            include("../TrabalhoBorth/produto/cadastrarProduto.php");
-            break;
-        default
-    ?>
+    <header>
+        <?php
+        ini_set('display_errors', 1);
 
-
+        switch (@$_REQUEST["page"]) {
+            case "cliente";
+                include("../Trabalho_borth/cliente/cadastrarCliente.php");
+                break;
+            case "gpcliente";
+                include("../Trabalho_borth/grupocliente/cadastrarGpCliente.php");
+                break;
+            case "gpusuario";
+                include("../Trabalho_borth/grupodeusuario/cadastrarGpUsuario.php");
+                break;
+            case "produto";
+                include("../Trabalho_borth/produto/cadastrarProduto.php");
+                break;
+            case "gpclienteslistar";
+                include("../Trabalho_borth/grupocliente/listarGpCliente.php");
+                break;
+            case "gpusuariolistar";
+                include("../Trabalho_borth/grupodeusuario/listarGpUsuario.php");
+                break;
+            case "clienteslistar";
+                include("../Trabalho_borth/cliente/listarCliente.php");
+                break;
+            default;
+        ?>
+                <h1 class="text-center">bem vindo</h1>
+    </header>
 
 <?php } ?>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
